@@ -91,7 +91,8 @@ def display_results(results: Dict):
     if st.button("🔊 Ouvir Análise"):
         tts = gTTS(text=analysis, lang='pt')
         audio_file = BytesIO()
-        tts.write_to_audiofile(audio_file)
+        tts.write_to_fp(audio_file)  # Changed from write_to_audiofile to write_to_fp
+        audio_file.seek(0)  # Reset the pointer to the beginning of the BytesIO object
         st.audio(audio_file)
 
 def main():
