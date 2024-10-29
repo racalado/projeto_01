@@ -1,3 +1,5 @@
+pip install streamlit google-generativeai Pillow requests gtts
+
 import streamlit as st
 from PIL import Image
 import google.generativeai as genai
